@@ -12,7 +12,7 @@ pwdLen
 
 #### 任务约定
 
-| 编号 | pwdLen | 密码量 | 备注 |
+| 十进制索引 | pwdLen | 密码量 | 备注 |
 | --- | --- | --- | --- |
 | 0 | <= suffixLen | suffixLen^dicLen | 1->suffixLen位的全部组合 |
 | 1 | 1+suffixLen | dicLen^suffixLen | 以dictList[0]开头的1+suffixLen位组合 |
@@ -29,3 +29,28 @@ pwdLen
 
 #### 小结：具体任务中抽象出框架
 任务指的是可以划分成N个相互独立（不互相调用结果的）子任务
+
+## 2 框架的描述
+(i) 表示实例 (m) 表示成员变量 (x)表示不在程序中
+### Task
+#### 字母表 alphabet (m)
+字母表是一个集合，由字母表的元素或元素组合可以唯一确定一个原子任务
+#### 进制 radix (m)
+字母表的长度
+#### 碎片 fragment (m)
+Fragment 类对象，一段连续的原子任务
+
+### Iterable
+#### <T implements Iterable> next()
+#### boolean hasNext()
+
+### AtomTask
+#### 子任务序列 subtask sequence (x)
+子任务序列是一个任务以集合形式的描述，有限，有序，完整。
+#### 原子任务 atomTask (i)
+保持任务之间独立的，不可再分的子任务序列元素，它以字母表的元素或元素组合表示
+#### 索引 index (i)
+
+### Fragment
+### head: AtomTask
+### tail: AtomTask

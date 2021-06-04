@@ -15,4 +15,10 @@ public interface TaskController {
 
     @PostMapping("/")
     String postTask();
+
+    @GetMapping("/fragment")
+    String getFragment();
+
+    @PostMapping("/fragment")
+    String submitFragment();
 }
